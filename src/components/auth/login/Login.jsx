@@ -52,9 +52,9 @@ const Login = () => {
       </div>
       <h1 className="text-2xl font-semibold">Login to your studyMe account</h1>
       <p className="text-sm text-gray-500 mb-4">Enter your details to log in</p>
-      <div className=" rounded-lg border-2 border-gray-200 p-2">
+      <div className=" rounded-lg border-2 border-gray-200 p-2  ">
         <button
-          className="relative flex items-center place-self-center justify-center p-1"
+          className="relative flex items-center place-self-center justify-center p-1 gap-1 w-full cursor-pointer"
           onClick={loginWithGoogle}
         >
           <div>
