@@ -54,7 +54,7 @@ const Login = () => {
       <p className="text-sm text-gray-500 mb-4">Enter your details to log in</p>
       <div className=" rounded-lg border-2 border-gray-200 p-2  ">
         <button
-          className="relative flex items-center place-self-center justify-center p-1 gap-1 w-full cursor-pointer"
+          className="relative flex items-center place-self-center justify-center p-1w-full cursor-pointer"
           onClick={loginWithGoogle}
         >
           <div>
