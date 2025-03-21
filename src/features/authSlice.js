@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   value: {
     userExists: null,
+    display: false,
   },
 };
 
@@ -13,8 +14,11 @@ export const userAuth = createSlice({
     checkUserExists: (state, action) => {
       state.value.userExists = action.payload;
     },
+    display: (state) => {
+      state.value.display = !state.value.display;
+    },
   },
 });
 
-export const { checkUserExists } = userAuth.actions;
+export const { checkUserExists, display } = userAuth.actions;
 export default userAuth.reducer;

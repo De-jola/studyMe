@@ -9,9 +9,11 @@ import { useSelector } from "react-redux";
 import Landing from "./components/home/Landing";
 import Dashboard from "./components/home/Dashboard";
 import Login from "./components/auth/login/Login";
+import SignUp from "./components/auth/signIn/SignUp";
 
 function App() {
   const checkUser = useSelector((state) => state.userAuth.value.userExists);
+  const display = useSelector((state) => state.userAuth.value.display);
 
   return (
     <>
@@ -25,7 +27,15 @@ function App() {
             />
             <Route
               path="/login"
-              element={checkUser ? <Navigate to="/dashboard" /> : <Login />}
+              element={
+                checkUser ? (
+                  <Navigate to="/dashboard" />
+                ) : display ? (
+                  <SignUp />
+                ) : (
+                  <Login />
+                )
+              }
             />
           </Routes>
         </div>
