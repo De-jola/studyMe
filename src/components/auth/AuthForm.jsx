@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { checkUserExists, display } from "../../features/authSlice";
 
-import { BsEyeSlash, BsPerson } from "react-icons/bs";
+import { BsEyeSlash, BsPerson, BsEye } from "react-icons/bs";
 import { FaGoogle } from "react-icons/fa6";
 import AuthButton from "./AuthButton";
 import AuthProviderButton from "./AuthProviderButton";
@@ -26,7 +26,11 @@ const AuthForm = ({ isSignUp }) => {
   const dispatch = useDispatch();
   const render = useSelector((state) => state.userAuth.value.display);
 
-  const handleDisplayPassword = () => setDisplayPassword((prev) => !prev);
+  const handleDisplayPassword = () =>
+    setDisplayPassword((prev) => {
+      const newValue = !prev;
+      return newValue;
+    });
 
   const handleAuth = async () => {
     try {
